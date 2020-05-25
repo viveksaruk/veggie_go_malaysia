@@ -125,7 +125,66 @@ class _QuickSearch extends StatelessWidget {
 class _FilterResults extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      padding: EdgeInsets.only(
+        right: 80.w,
+        left: 80.w,
+      ),
+      child: Column(
+        children: <Widget>[
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Container(
+                child: Text(
+                  'Results',
+                  style: TextStyle(
+                    fontSize: 28.0,
+                  ),
+                ),
+              ),
+              Container(
+                child: Container(
+                  child: Container(
+                    child: Row(
+                      children: <Widget>[
+                        Container(
+                          height: 25.0,
+                          width: 120.0,
+                          decoration: BoxDecoration(
+                            border: Border.all(color: Colors.grey, width: 1),
+                            borderRadius: BorderRadius.circular(30),
+                          ),
+                          child: FlatButton(
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: <Widget>[
+                                Text('Nearest'),
+                                Icon(Icons.keyboard_arrow_down)
+                              ],
+                            ),
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(left: 10.0),
+                          child: Icon(
+                            // Until I ge which is this button in Flutter Material
+                            Icons.details,
+                            // Until I ge which is this button in Flutter Material
+                            color: Colors
+                                .lightGreen, // Until I ge which is this button in Flutter Material
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          )
+        ],
+      ),
+    );
   }
 }
 
