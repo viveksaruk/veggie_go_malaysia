@@ -23,48 +23,31 @@ class FilterResults extends StatelessWidget {
                 ),
               ),
               Container(
+                color: Colors.white,
                 child: Row(
                   children: <Widget>[
                     Container(
-                      height: 30.0,
-                      width: 120.0,
+                      height: 90.h,
+                      width: 290.h,
                       decoration: BoxDecoration(
                         border: Border.all(
                           color: Colors.white,
                           width: 1,
                         ),
-                        borderRadius: BorderRadius.circular(30),
                       ),
                       child: RaisedButton(
+                        color: Colors.white,
                         onPressed: () {},
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(
-                            80.0,
+                            120.h,
                           ),
                         ),
-                        padding: const EdgeInsets.all(
-                          0.0,
-                        ),
-                        child: Ink(
-                          decoration: const BoxDecoration(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(
-                                80.0,
-                              ),
-                            ),
-                          ),
-                          child: Container(
-                            alignment: Alignment.center,
-                            child: const Text(
-                              'Nearest',
-                              textAlign: TextAlign.center,
-                            ),
-                          ),
-                        ),
+                        child: Text( 'Nearest', textAlign: TextAlign.center,),
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.only(left: 15.0),
+                      margin: EdgeInsets.only(left: 40.w),
                       width: 70.w,
                       height: 70.w,
                       child: Image.asset('assets/icons/filterEmpty.png'),
