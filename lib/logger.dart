@@ -10,8 +10,8 @@ class SimpleLogPrinter extends LogPrinter {
 
   @override
   List<String> log(LogEvent event) {
-    AnsiColor color = PrettyPrinter.levelColors[event.level];
-    String emoji = PrettyPrinter.levelEmojis[event.level];
+    var color = PrettyPrinter.levelColors[event.level];
+    var emoji = PrettyPrinter.levelEmojis[event.level];
     return [color('$emoji [$className]: ${event.message}')];
   }
 }

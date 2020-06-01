@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "762277438717",
+    "firebase_url": "https://goveggie-2817e.firebaseio.com",
+    "project_id": "goveggie-2817e",
+    "storage_bucket": "goveggie-2817e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:762277438717:android:8172cf5953fcb911a3ca94",
+        "android_client_info": {
+          "package_name": "com.vegsocmalaysia.goveggie"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "762277438717-34ol51ig06sulj6gsap0lmv2meem77u1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3LZXBrNCtgzGKSFWWI2PQGwLk05rRAQ4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "762277438717-34ol51ig06sulj6gsap0lmv2meem77u1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

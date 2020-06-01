@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>762277438717-pvm2csihvnu7l17qs7gpqbae8nmu5ku8.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.762277438717-pvm2csihvnu7l17qs7gpqbae8nmu5ku8</string>
+	<key>API_KEY</key>
+	<string>AIzaSyD_s1PlGlrfKQhE68GKpuCiI0W0toRySfY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>762277438717</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.vegsocmalaysia.goveggie</string>
+	<key>PROJECT_ID</key>
+	<string>goveggie-2817e</string>
+	<key>STORAGE_BUCKET</key>
+	<string>goveggie-2817e.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:762277438717:ios:089e87cc7a128efea3ca94</string>
+	<key>DATABASE_URL</key>
+	<string>https://goveggie-2817e.firebaseio.com</string>
+</dict>
+</plist>
