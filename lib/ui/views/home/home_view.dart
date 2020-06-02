@@ -25,13 +25,14 @@ class HomeView extends StatelessWidget {
                 _AnnouncementCarousel(),
                 _QuickSearch(),
                 _FilterResults(),
-                _ResultsListView(),
+                model.isBusy ? CircularProgressIndicator() : _ResultsListView(),
               ],
             ),
           ),
         ),
       ),
       viewModelBuilder: () => HomeViewModel(),
+      onModelReady: (model) => model.getResults(),
     );
   }
 }
