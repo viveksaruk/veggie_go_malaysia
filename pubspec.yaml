@@ -34,11 +34,14 @@ dependencies:
   firebase_storage: ^3.1.6
   firebase_analytics: ^5.0.14
 
+  location: ^3.0.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   pedantic: ^1.9.0
+  test:
+  mockito:
 
 flutter:
   uses-material-design: true
