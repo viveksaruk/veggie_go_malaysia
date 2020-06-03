@@ -33,9 +33,7 @@ class FirestoreService implements DatabaseService {
     userLocation ??= await _geoLocationService.getUserLocation();
 
     print('fetching');
-    var q = _collectionRef
-        .where('status', isEqualTo: 'OPERATIONAL')
-        .limit(ResultsLimit);
+    var q = _collectionRef.limit(ResultsLimit);
 
     if (_lastDocument != null) {
       q = q.startAfterDocument(_lastDocument);
@@ -45,12 +43,13 @@ class FirestoreService implements DatabaseService {
 
     var currentRequestIndex = _allPagedResults.length;
     print('attempting');
-    var placesStream =
-        _geoLocationService.geo.collection(collectionRef: q).within(
-              center: userLocation,
-              radius: 10.0, //km
-              field: 'location',
-            );
+    var geoRef = _geoLocationService.geo.collection(collectionRef: q);
+    var placesStream = geoRef.within(
+      center: userLocation,
+      radius: 10.0, //km
+      field: 'location',
+      strictMode: true,
+    );
     print('attempted');
     placesStream.listen((List<DocumentSnapshot> documentList) {
       if (documentList.isNotEmpty) {

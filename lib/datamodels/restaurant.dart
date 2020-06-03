@@ -1,11 +1,13 @@
 import 'dart:core';
 
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 
 class Restaurant {
   final String docId;
   final String name;
+
   final String address;
   final String phoneNumber;
   final String website;
@@ -22,19 +24,19 @@ class Restaurant {
   final bool isRecommended;
   final int priceLevel; // $, $$, $$$, $$$$
 
-  final double latitude;
-  final double longitude;
+  final GeoPoint location;
   final String mapUrl;
 
   final double rating;
   final List<Map<String, dynamic>> reviews;
 
-  // Calculate distance from user with a method
-  double _distanceFromUser;
+  double distanceFromUser;
 
   Restaurant({
     @required this.docId,
     @required this.name,
+    @required this.location,
+    this.distanceFromUser,
     this.address,
     this.phoneNumber,
     this.photos,
@@ -45,29 +47,22 @@ class Restaurant {
     this.isBudget,
     this.isRecommended,
     this.priceLevel,
-    this.latitude,
-    this.longitude,
     this.mapUrl,
     this.rating,
     this.reviews,
     this.website,
-  })  :
-        // Don't allow restaurant to display to user if name isn't known
-        assert(name != null && name != ''),
-        // Both geolocation and address can't be missing at the same time
-        assert(((latitude != null) && (longitude != null)) ||
-            (address != null && address != ''));
+  });
 
-  double get distanceFromUser {
-    // TODO: calculate distance using latitude and longitude
-    return _distanceFromUser;
+  void updateDistanceFromUser(GeoPoint userLocation) {
+    // TODO: calculate new distance
   }
 
   factory Restaurant.fromMap(
       Map<dynamic, dynamic> firestoreObject, String documentID) {
     return Restaurant(
-      name: firestoreObject['name'],
       docId: documentID,
+      name: firestoreObject['name'],
+      location: firestoreObject['location']['geopoint'],
     );
   }
 }
