@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stacked/stacked.dart';
 import 'package:veggie_go_malaysia/constants/colors.dart';
+import 'package:veggie_go_malaysia/datamodels/restaurant.dart';
 import 'package:veggie_go_malaysia/ui/views/home/home_viewmodel.dart';
 import 'package:veggie_go_malaysia/ui/views/home/widgets/location_bar.dart';
 
@@ -25,14 +26,16 @@ class HomeView extends StatelessWidget {
                 _AnnouncementCarousel(),
                 _QuickSearch(),
                 _FilterResults(),
-                model.isBusy ? CircularProgressIndicator() : _ResultsListView(),
+                model.isBusy
+                    ? CircularProgressIndicator()
+                    : _ResultsListView(model.places),
               ],
             ),
           ),
         ),
       ),
       viewModelBuilder: () => HomeViewModel(),
-      onModelReady: (model) => model.getResults(),
+      onModelReady: (model) => model.fetchResults(),
     );
   }
 }
@@ -131,8 +134,18 @@ class _FilterResults extends StatelessWidget {
 }
 
 class _ResultsListView extends StatelessWidget {
+  final List<Restaurant> results;
+  _ResultsListView(this.results);
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return results != null
+        ? ListView.builder(
+            itemCount: results.length,
+            itemBuilder: (context, index) => ListTile(
+              // TODO: integrate RestaurantCard
+              title: Text(results[index].name),
+            ),
+          )
+        : Text('No results found');
   }
 }

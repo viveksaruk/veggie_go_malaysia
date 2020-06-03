@@ -4,6 +4,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 
 class Restaurant {
+  final String docId;
   final String name;
   final String address;
   final String phoneNumber;
@@ -32,6 +33,7 @@ class Restaurant {
   double _distanceFromUser;
 
   Restaurant({
+    @required this.docId,
     @required this.name,
     this.address,
     this.phoneNumber,
@@ -61,9 +63,11 @@ class Restaurant {
     return _distanceFromUser;
   }
 
-  factory Restaurant.fromMap(Map<dynamic, dynamic> firestoreObject) {
+  factory Restaurant.fromMap(
+      Map<dynamic, dynamic> firestoreObject, String documentID) {
     return Restaurant(
       name: firestoreObject['name'],
+      docId: documentID,
     );
   }
 }

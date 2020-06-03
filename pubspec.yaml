@@ -35,6 +35,7 @@ dependencies:
   firebase_analytics: ^5.0.14
 
   location: ^3.0.0
+  geoflutterfire: ^2.1.0
 
 dev_dependencies:
   flutter_test:
